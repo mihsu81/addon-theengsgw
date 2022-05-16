@@ -1,0 +1,39 @@
+{
+  "name": "TheengsGateway",
+  "version": "dev",
+  "slug": "theengsgw",
+  "description": "TheengsGateway HA Add-on",
+  "url": "https://github.com/mihsu81/addon-theengsgw",
+  "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
+  "startup": "application",
+  "boot": "auto",
+  "panel_admin": false,
+  "host_network": true,
+  "privileged": ["NET_ADMIN", "SYS_ADMIN"],
+  "host_dbus": true,
+  "map": ["ssl:ro"],
+  "options": {
+    "MQTT_HOST": "192.168.45.100",
+    "MQTT_USERNAME": "user",
+    "MQTT_PASSWORD": "passwd",
+    "MQTT_PORT": 1883,
+    "MQTT_PUB_TOPIC": "home/TheengsGateway/BTtoMQTT",
+    "MQTT_SUB_TOPIC": "home/TheengsGateway/commands",
+    "PUBLISH_ALL": true,
+    "SCAN_DUR": 60,
+    "TIME_BETWEEN": 60,
+    "LOG_LEVEL": "WARNING"
+  },
+  "schema": {
+    "MQTT_HOST": "str",
+    "MQTT_USERNAME": "str",
+    "MQTT_PASSWORD": "str",
+    "MQTT_PORT": "int",
+    "MQTT_PUB_TOPIC": "str?",
+    "MQTT_SUB_TOPIC": "str?",
+    "PUBLISH_ALL": "bool?",
+    "SCAN_DUR": "int?",
+    "TIME_BETWEEN": "int?",
+    "LOG_LEVEL": "str?"
+  }
+}
