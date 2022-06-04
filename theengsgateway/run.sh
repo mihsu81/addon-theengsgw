@@ -16,6 +16,10 @@ PUBLISH_ALL=$(bashio::config 'PUBLISH_ALL')
 SCAN_DUR=$(bashio::config 'SCAN_DUR')
 TIME_BETWEEN=$(bashio::config 'TIME_BETWEEN')
 LOG_LEVEL=$(bashio::config 'LOG_LEVEL')
+DISCOVERY=$(bashio::config 'DISCOVERY')
+DISCOVERY_TOPIC=$(bashio::config 'DISCOVERY_TOPIC')
+DISCOVERY_DEVICE_NAME=$(bashio::config 'DISCOVERY_DEVICE_NAME')
+DISCOVERY_FILTER=$(bashio::config 'DISCOVERY_FILTER')
 
 {
     echo "{"
@@ -29,6 +33,10 @@ LOG_LEVEL=$(bashio::config 'LOG_LEVEL')
     echo "    \"publish_topic\": \"${MQTT_PUB_TOPIC}\","
     echo "    \"subscribe_topic\": \"${MQTT_SUB_TOPIC}\","
     echo "    \"user\": \"${MQTT_USERNAME}\""
+    echo "    \"discovery\": \"${DISCOVERY}\""
+    echo "    \"discovery_topic\": \"${DISCOVERY_TOPIC}\""
+    echo "    \"discovery_device_name\": \"${DISCOVERY_DEVICE_NAME}\""
+    echo "    \"discovery_filter\": \"${DISCOVERY_FILTER}\""
     echo "}"
 } > "${CONFIG}"
 

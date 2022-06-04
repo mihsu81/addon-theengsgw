@@ -20,5 +20,9 @@ PUBLISH_ALL | boolean | No | Publish all beacons if true, defaults to `yes`
 SCAN_DUR | int | No | BLE scan duration (seconds), defaults to `60`
 TIME_BETWEEN | int | No | Seconds to wait between scans, defaults to `60`
 LOG_LEVEL | string | No | TheengsGateway log level, defaults to `WARNING`
+DISCOVERY | boolean | No | Activate discovery or not `true`
+DISCOVERY_TOPIC | string | No | Home Assistant discovery topic`homeassistant/sensor`
+DISCOVERY_DEVICE_NAME | string | No | Device name `TheengsGateway`
+DISCOVERY_FILTER | string | No | Excluded BLE devices models `"IBEACON", "GAEN", "MS-CDP"`
 
 For more details please refer to [TheengsGateway](https://theengs.github.io/gateway/).
