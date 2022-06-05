@@ -23,6 +23,6 @@ LOG_LEVEL | string | No | TheengsGateway log level, defaults to `WARNING`
 DISCOVERY | boolean | No | Activate discovery or not `true`
 DISCOVERY_TOPIC | string | No | Home Assistant discovery topic`homeassistant/sensor`
 DISCOVERY_DEVICE_NAME | string | No | Device name `TheengsGateway`
-DISCOVERY_FILTER | string | No | Excluded BLE devices models `"IBEACON", "GAEN", "MS-CDP"`
+DISCOVERY_FILTER | string | No | Excluded BLE devices models `[IBEACON,GAEN,MS-CDP]`
 
 For more details please refer to [TheengsGateway](https://theengs.github.io/gateway/).
