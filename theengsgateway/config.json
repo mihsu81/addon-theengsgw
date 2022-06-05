@@ -26,7 +26,7 @@
     "DISCOVERY": true,
     "DISCOVERY_TOPIC": "homeassistant/sensor",
     "DISCOVERY_DEVICE_NAME": "TheengsGateway",
-    "DISCOVERY_FILTER": ["IBEACON", "GAEN", "MS-CDP"]
+    "DISCOVERY_FILTER": "[IBEACON,GAEN,MS-CDP]"
   },
   "schema": {
     "MQTT_HOST": "str",
@@ -39,9 +39,9 @@
     "SCAN_DUR": "int?",
     "TIME_BETWEEN": "int?",
     "LOG_LEVEL": "str?",
-    "DISCOVERY": "int",
+    "DISCOVERY": "bool?",
     "DISCOVERY_TOPIC": "str?",
     "DISCOVERY_DEVICE_NAME": "str?",
-    "DISCOVERY_FILTER": "list?"
+    "DISCOVERY_FILTER": "str?"
   }
 }
