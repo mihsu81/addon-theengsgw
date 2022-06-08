@@ -13,7 +13,7 @@
   "host_dbus": true,
   "map": ["ssl:ro"],
   "options": {
-    "MQTT_HOST": "192.168.45.100",
+    "MQTT_HOST": "localhost",
     "MQTT_USERNAME": "user",
     "MQTT_PASSWORD": "passwd",
     "MQTT_PORT": 1883,
@@ -30,8 +30,8 @@
   },
   "schema": {
     "MQTT_HOST": "str",
-    "MQTT_USERNAME": "str",
-    "MQTT_PASSWORD": "str",
+    "MQTT_USERNAME": "str?",
+    "MQTT_PASSWORD": "str?",
     "MQTT_PORT": "int",
     "MQTT_PUB_TOPIC": "str?",
     "MQTT_SUB_TOPIC": "str?",
