@@ -14,8 +14,8 @@
   "map": ["ssl:ro"],
   "options": {
     "MQTT_HOST": "localhost",
-    "MQTT_USERNAME": "user",
-    "MQTT_PASSWORD": "passwd",
+    "MQTT_USERNAME": "",
+    "MQTT_PASSWORD": "",
     "MQTT_PORT": 1883,
     "MQTT_PUB_TOPIC": "home/TheengsGateway/BTtoMQTT",
     "MQTT_SUB_TOPIC": "home/TheengsGateway/commands",
