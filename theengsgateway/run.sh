@@ -20,6 +20,7 @@ DISCOVERY=$(bashio::config 'DISCOVERY')
 DISCOVERY_TOPIC=$(bashio::config 'DISCOVERY_TOPIC')
 DISCOVERY_DEVICE_NAME=$(bashio::config 'DISCOVERY_DEVICE_NAME')
 DISCOVERY_FILTER=$(bashio::config 'DISCOVERY_FILTER')
+ADAPTER=$(bashio::config 'ADAPTER')
 
 {
     echo "{"
@@ -36,7 +37,8 @@ DISCOVERY_FILTER=$(bashio::config 'DISCOVERY_FILTER')
     echo "    \"discovery\": \"${DISCOVERY}\","
     echo "    \"discovery_topic\": \"${DISCOVERY_TOPIC}\","
     echo "    \"discovery_device_name\": \"${DISCOVERY_DEVICE_NAME}\","
-    echo "    \"discovery_filter\": \"${DISCOVERY_FILTER}\""
+    echo "    \"discovery_filter\": \"${DISCOVERY_FILTER}\","
+    echo "    \"adapter\": \"${ADAPTER}\""
     echo "}"
 } > "${CONFIG}"
 
