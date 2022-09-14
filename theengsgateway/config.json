@@ -1,6 +1,6 @@
 {
   "name": "TheengsGateway",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "slug": "theengsgw",
   "description": "TheengsGateway HA Add-on",
   "url": "https://github.com/mihsu81/addon-theengsgw",
@@ -28,7 +28,8 @@
     "DISCOVERY_TOPIC": "homeassistant/sensor",
     "DISCOVERY_DEVICE_NAME": "TheengsGateway",
     "DISCOVERY_FILTER": "[IBEACON,GAEN,MS-CDP]",
-    "ADAPTER": ""
+    "ADAPTER": "",
+    "SCANNING_MODE": "active"
   },
   "schema": {
     "MQTT_HOST": "str",
@@ -45,6 +46,7 @@
     "DISCOVERY_TOPIC": "str?",
     "DISCOVERY_DEVICE_NAME": "str?",
     "DISCOVERY_FILTER": "str?",
-    "ADAPTER": "str?"
+    "ADAPTER": "str?",
+    "SCANNING_MODE": "str?"
   }
 }

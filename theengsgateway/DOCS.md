@@ -25,5 +25,6 @@ DISCOVERY_TOPIC | string | No | Home Assistant discovery topic`homeassistant/sen
 DISCOVERY_DEVICE_NAME | string | No | Device name `TheengsGateway`
 DISCOVERY_FILTER | string | No | Excluded BLE devices models `[IBEACON,GAEN,MS-CDP]`
 ADAPTER | string | No | Bluetooth adapter (e.g. hci1 on Linux)
+SCANNING_MODE | string | No | Change scanning mode between `active` and `passive`, defaults to `active`
 
 For more details please refer to [TheengsGateway](https://theengs.github.io/gateway/).
