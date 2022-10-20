@@ -17,8 +17,17 @@ This Add-on for [Home Assistant](https://www.home-assistant.io/) allows you to r
 
 
 ## Installation
+1) Adding the repository into the add-on store
 
-Install by going to Settings -> Add-ons -> Add-on store -> ⁞ (Menu) -> Repositories -> Fill in the URL `https://github.com/mihsu81/addon-theengsgw` -> Add.
+[![Open your Home Assistant instance and show the add add-on repository dialog with a specific repository URL pre-filled.](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2Fmihsu81%2Faddon-theengsgw)
+
+Or install by going to Settings -> Add-ons -> Add-on store -> ⁞ (Menu) -> Repositories -> Fill in the URL `https://github.com/mihsu81/addon-theengsgw` -> Add.
+
+2) Install the addon, by clicking on it from the store
+
+3) Configure the add-on from the dedicated tab
+
+4) Start
 
 ## Documentation
 
