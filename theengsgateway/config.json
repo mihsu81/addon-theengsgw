@@ -19,7 +19,7 @@
     "MQTT_PASSWORD": "",
     "MQTT_PORT": 1883,
     "MQTT_PUB_TOPIC": "home/TheengsGateway/BTtoMQTT",
-    "MQTT_SUB_TOPIC": "home/TheengsGateway/commands",
+    "MQTT_SUB_TOPIC": "home/+/BTtoMQTT/undecoded",
     "PUBLISH_ALL": true,
     "SCAN_DUR": 60,
     "TIME_BETWEEN": 60,
