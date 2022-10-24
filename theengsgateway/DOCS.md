@@ -15,7 +15,7 @@ MQTT_USERNAME | string | Yes | MQTT username
 MQTT_PASSWORD | string | Yes | MQTT password
 MQTT_PORT | integer | Yes | MQTT host port, defaults to `1883`
 MQTT_PUB_TOPIC | string | No | MQTT publish topic, defaults to `home/TheengsGateway/BTtoMQTT`
-MQTT_SUB_TOPIC | string | No | MQTT subscribe topic, defaults to `home/TheengsGateway/commands`
+MQTT_SUB_TOPIC | string | No | MQTT subscribe topic, defaults to `home/+/BTtoMQTT/undecoded`
 PUBLISH_ALL | boolean | No | Publish all beacons if true, defaults to `yes`
 SCAN_DUR | int | No | BLE scan duration (seconds), defaults to `60`
 TIME_BETWEEN | int | No | Seconds to wait between scans, defaults to `60`
