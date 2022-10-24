@@ -3,7 +3,7 @@ A big release for Theengs Gateway, @DigiH did a huge work adding new devices and
 
 Also, the TheengsGateway auto discovery following HA convention can be compatible now with other controllers like OpenHAB thanks to the work of @koenvervloesem #62 , just set `hass_discovery` to 0 if you use [OpenHAB](https://www.openhab.org/) or other Home Controllers.
 
-I added documentation to the Theengs satellite/proxy feature that was available in the previous release. If you use OpenMQTTGateway [web upload](https://docs.openmqttgateway.com/upload/web-install.html) binary `esp32dev-ble-mqtt-undecoded` that will publish directly to 'home/<gateway name>/BTtoMQTT` making it directly compatible with Theengs Gateway MQTTtoMQTT decoding feature. In short, you can have satellites ESP32 sending undecoded data to TheengsGateway, and TheengsGateway centralizing the decoding work.
+I added documentation to the Theengs satellite/proxy feature that was available in the previous release. If you use OpenMQTTGateway [web upload](https://docs.openmqttgateway.com/upload/web-install.html) binary `esp32dev-ble-mqtt-undecoded` that will publish directly to `home/<gateway name>/BTtoMQTT` making it directly compatible with Theengs Gateway MQTTtoMQTT decoding feature. In short, you can have satellites ESP32 sending undecoded data to TheengsGateway, and TheengsGateway centralizing the decoding work.
 
 ## What's Changed
 - Add direct my home assistant link to doc by @1technophile in https://github.com/mihsu81/addon-theengsgw/pull/11
