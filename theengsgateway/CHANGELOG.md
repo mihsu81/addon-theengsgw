@@ -1,3 +1,16 @@
+## [1.3.1]
+Small maintenance release to align the decoder version between OpenMQTTGateway, the gateway and the app, and some minor changes.
+## What's Changed
+- [DOCS] Add discovery options to docker use by @1technophile in #69
+- Improve install instructions by @1technophile in #70
+- Add more space for the device table by @1technophile in #72
+- Correct timezone offset for LYWSD02 time synchronization by @koenvervloesem in #71
+- Add shop link by @1technophile in #74
+- Fix typo in passive scanning docs: daemon-reload by @koenvervloesem in #76
+- Extend docs for building from source by @koenvervloesem in #80
+- Bump TheengsDecoder to v0.9.7 by @1technophile in #82, contains one breaking change about the IBS-TH1
+- Code style cleanup with black, flake8 and isort by @koenvervloesem in #77
+
 ## [1.3.0]
 A big release for Theengs Gateway, @DigiH did a huge work adding new devices and improving the existing ones!
 
