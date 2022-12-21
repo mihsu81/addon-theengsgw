@@ -1,3 +1,8 @@
+## [1.3.2]
+Maintenance release with fix for installation fail.
+## What's Changed
+- Remove usage of packaging.LegacyVersion by @koenvervloesem in #84
+
 ## [1.3.1]
 Small maintenance release to align the decoder version between OpenMQTTGateway, the gateway and the app, and some minor changes.
 ## What's Changed
