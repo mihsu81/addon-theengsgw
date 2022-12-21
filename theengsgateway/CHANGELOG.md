@@ -1,3 +1,6 @@
+## [1.3.2]
+Small maintenance release to fix a [bug](https://github.com/theengs/gateway/pull/84) when installing.
+
 ## [1.3.1]
 Small maintenance release to align the decoder version between OpenMQTTGateway, the gateway and the app, and some minor changes.
 ## What's Changed
