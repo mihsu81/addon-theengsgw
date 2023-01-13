@@ -1,3 +1,28 @@
+## [1.4.0]
+More than 10 new devices supported !
+
+## What's Changed
+- Disable duplicate detection of advertisement data on Linux by @koenvervloesem in #85
+- Bump Theengs Decoder to v1.0.0 by @1technophile in #89
+
+## New BLE devices and changes:
+|Devices|Model|Measurements|
+|-|:-:|:-:|
+| BlueMaestro|TempoDisc 1 in 1|temperature/battery|
+| BlueMaestro|TempoDisc 4 in 1|temperature/humidity/pressure/battery|
+| ClearGrass alarm clock|CGD1|temperature/humidity/**battery**|
+| ClearGrass alarm clock|CGC1|temperature/humidity/battery|
+| GOVEE|H5074|temperature/humidity/battery|
+| GOVEE|H5101|temperature/humidity/battery|
+| GOVEE|[H5106](https://compatible.openmqttgateway.com/index.php/product/govee-h5106-pm25-temperature-humidity/)|PM2.5/temperature/humidity/battery|
+| GOVEE|H5174|temperature/humidity/battery|
+| GOVEE|H5177|temperature/humidity/battery|
+| Oria/Brifit/SigmaWit/SensorPro|TH Sensor T301|temperature/humidity/battery|
+| Mopeka|[Pro](https://compatible.openmqttgateway.com/index.php/product/mopeka-tank-pro-sensor-with-magnets-for-steel-lp-tanks/)|temperature/level/sync status/voltage/battery/reading quality|
+| Sensirion|MyCO₂/CO₂ Gadget|temperature/humidity/carbon dioxide|
+| Sensirion|SHT4X TH sensor|temperature/humidity|
+| ThermoPro|TP393|temperature/humidity|
+
 ## [1.3.2]
 Small maintenance release to fix a [bug](https://github.com/theengs/gateway/pull/84) when installing.
 
