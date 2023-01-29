@@ -1,3 +1,21 @@
+## [1.5.0]
+## What's Changed
+* Generalized time synchronization support for more clocks by @koenvervloesem in https://github.com/theengs/gateway/pull/91
+* [CI] Fix poetry error on isort by @1technophile in https://github.com/theengs/gateway/pull/94
+* Bump TheengsDecoder to 1.1.0 by @1technophile in https://github.com/theengs/gateway/pull/93
+* LYWSD03MMC negative temp fix by @DigiH in https://github.com/theengs/decoder/pull/269
+* MHO-C401 fix by @DigiH in https://github.com/theengs/decoder/pull/259
+* MAC model condition introduction by @DigiH in https://github.com/theengs/decoder/pull/263
+* SwitchBot Curtain fix by @DigiH in https://github.com/theengs/decoder/pull/268
+
+New BLE devices support:
+|Devices|Model|Measurements|
+|-|:-:|:-:|
+| BlueCharm|BC08|acceleration x/y/z-axis/voltage/temperature|
+| Jaalee|JHT F525|temperature/humidity/battery|
+
+**Full Changelog**: https://github.com/theengs/gateway/compare/v0.7.0...v0.8.0
+
 ## [1.4.0]
 More than 10 new devices supported !
 
