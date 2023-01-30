@@ -26,5 +26,7 @@ DISCOVERY_DEVICE_NAME | string | No | Device name `TheengsGateway`
 DISCOVERY_FILTER | string | No | Excluded BLE devices models `[IBEACON,GAEN,MS-CDP]`
 ADAPTER | string | No | Bluetooth adapter (e.g. hci1 on Linux)
 SCANNING_MODE | string | No | Change scanning mode between `active` and `passive`, defaults to `active`
+TIME_SYNC | string | No | Addresses of BLE devices to synchronize time (defaults to the empty list `[]`)
+TIME_FORMAT | boolean | No | Use 12-hour (`yes`) or 24-hour (`no`) time format for clocks (defaults to `no`)
 
 For more details please refer to [TheengsGateway](https://theengs.github.io/gateway/).

@@ -29,7 +29,9 @@
     "DISCOVERY_DEVICE_NAME": "TheengsGateway",
     "DISCOVERY_FILTER": "[IBEACON,GAEN,MS-CDP]",
     "ADAPTER": "",
-    "SCANNING_MODE": "active"
+    "SCANNING_MODE": "active",
+    "TIME_SYNC": "[]",
+    "TIME_FORMAT": false
   },
   "schema": {
     "MQTT_HOST": "str",
@@ -47,6 +49,8 @@
     "DISCOVERY_DEVICE_NAME": "str?",
     "DISCOVERY_FILTER": "str?",
     "ADAPTER": "str?",
-    "SCANNING_MODE": "str?"
+    "SCANNING_MODE": "str?",
+    "TIME_SYNC": "str?",
+    "TIME_FORMAT": "bool?"
   }
 }
