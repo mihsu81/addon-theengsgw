@@ -42,7 +42,7 @@ TIME_FORMAT=$(bashio::config 'TIME_FORMAT')
     echo "    \"discovery_filter\": \"${DISCOVERY_FILTER}\","
     echo "    \"adapter\": \"${ADAPTER}\"",
     echo "    \"time_sync\": \"${TIME_SYNC}\"",
-    echo "    \"time_format\": \"${TIME_FORMAT}\"",
+    echo "    \"time_format\": \"${TIME_FORMAT}\""
     echo "}"
 } > "${CONFIG}"
 
