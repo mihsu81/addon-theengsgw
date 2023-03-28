@@ -21,6 +21,8 @@ DISCOVERY_TOPIC=$(bashio::config 'DISCOVERY_TOPIC')
 DISCOVERY_DEVICE_NAME=$(bashio::config 'DISCOVERY_DEVICE_NAME')
 DISCOVERY_FILTER=$(bashio::config 'DISCOVERY_FILTER')
 ADAPTER=$(bashio::config 'ADAPTER')
+TIME_SYNC=$(bashio::config 'TIME_SYNC')
+TIME_FORMAT=$(bashio::config 'TIME_FORMAT')
 
 {
     echo "{"
@@ -38,7 +40,9 @@ ADAPTER=$(bashio::config 'ADAPTER')
     echo "    \"discovery_topic\": \"${DISCOVERY_TOPIC}\","
     echo "    \"discovery_device_name\": \"${DISCOVERY_DEVICE_NAME}\","
     echo "    \"discovery_filter\": \"${DISCOVERY_FILTER}\","
-    echo "    \"adapter\": \"${ADAPTER}\""
+    echo "    \"adapter\": \"${ADAPTER}\"",
+    echo "    \"time_sync\": \"${TIME_SYNC}\"",
+    echo "    \"time_format\": \"${TIME_FORMAT}\""
     echo "}"
 } > "${CONFIG}"
 
