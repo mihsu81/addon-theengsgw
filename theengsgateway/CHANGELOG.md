@@ -1,3 +1,23 @@
+## [1.6.0]
+## What's Changed
+* Add mfr key with company name based on company ID by @koenvervloesem in https://github.com/theengs/gateway/pull/95
+* Fix not being able to set publish_all to 0 by @koenvervloesem in https://github.com/theengs/gateway/pull/96
+* Use UTF-8 encoding to read long description in setup.py by @koenvervloesem in https://github.com/theengs/gateway/pull/98
+* The main loop should not run in the same scope as __init__ by @BlackLight in https://github.com/theengs/gateway/pull/101
+* Added presence detection by @toomyem in https://github.com/theengs/gateway/pull/106
+* Added LWT message handling by @toomyem in https://github.com/theengs/gateway/pull/108
+* [DOCS] Add use cases links by @1technophile in https://github.com/theengs/gateway/pull/111
+* Replace deprecated BLEDevice.rssi by AdvertisementData.rssi by @koenvervloesem in https://github.com/theengs/gateway/pull/114
+* Use TheengsDecoder package instead of submodule by @koenvervloesem in https://github.com/theengs/gateway/pull/112
+* Add diagnose module for troubleshooting by @koenvervloesem in https://github.com/theengs/gateway/pull/116
+* [DIAG] Fix requirement for windows by @1technophile in https://github.com/theengs/gateway/pull/117
+
+New BLE devices support:
+|Devices|Model|Measurements|
+|-|:-:|:-:|
+| Polar|H10|heart rate|
+| Atomax|Skale|weight|
+
 ## [1.5.0]
 ## What's Changed
 * Generalized time synchronization support for more clocks by @koenvervloesem in https://github.com/theengs/gateway/pull/91

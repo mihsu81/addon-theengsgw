@@ -12,6 +12,8 @@ MQTT_PASSWORD=$(bashio::config 'MQTT_PASSWORD')
 MQTT_PORT=$(bashio::config 'MQTT_PORT')
 MQTT_PUB_TOPIC=$(bashio::config 'MQTT_PUB_TOPIC')
 MQTT_SUB_TOPIC=$(bashio::config 'MQTT_SUB_TOPIC')
+MQTT_PRE_TOPIC=$(bashio::config 'MQTT_PRE_TOPIC')
+PRESENCE=$(bashio::config 'PRESENCE')
 PUBLISH_ALL=$(bashio::config 'PUBLISH_ALL')
 SCAN_DUR=$(bashio::config 'SCAN_DUR')
 TIME_BETWEEN=$(bashio::config 'TIME_BETWEEN')
@@ -32,6 +34,8 @@ TIME_FORMAT=$(bashio::config 'TIME_FORMAT')
     echo "    \"port\": ${MQTT_PORT},"
     echo "    \"publish_topic\": \"${MQTT_PUB_TOPIC}\","
     echo "    \"subscribe_topic\": \"${MQTT_SUB_TOPIC}\","
+    echo "    \"presence_topic\": \"${MQTT_PRE_TOPIC}\","
+    echo "    \"presence\": ${PRESENCE},"
     echo "    \"publish_all\": ${PUBLISH_ALL},"
     echo "    \"ble_scan_time\": ${SCAN_DUR},"
     echo "    \"ble_time_between_scans\": ${TIME_BETWEEN},"
