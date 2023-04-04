@@ -1,3 +1,7 @@
+## [1.6.1]
+## What's Changed
+* Filter APPLE_CONT devices by @1technophile in https://github.com/mihsu81/addon-theengsgw/pull/23
+
 ## [1.6.0]
 ## What's Changed
 * Add mfr key with company name based on company ID by @koenvervloesem in https://github.com/theengs/gateway/pull/95
