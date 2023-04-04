@@ -29,7 +29,7 @@
     "DISCOVERY": true,
     "DISCOVERY_TOPIC": "homeassistant/sensor",
     "DISCOVERY_DEVICE_NAME": "TheengsGateway",
-    "DISCOVERY_FILTER": "[IBEACON,GAEN,MS-CDP]",
+    "DISCOVERY_FILTER": "[IBEACON,GAEN,MS-CDP,APPLE_CONT]",
     "ADAPTER": "",
     "SCANNING_MODE": "active",
     "TIME_SYNC": "[]",
