@@ -1,3 +1,13 @@
+## [1.7.0]
+## What's Changed
+* Fix diagnose and run diagnostics when log level is DEBUG by @koenvervloesem in https://github.com/theengs/gateway/pull/122
+* Add APPLE_CONT and APPLE_CONTAT to default discovery filter by @koenvervloesem in https://github.com/theengs/gateway/pull/123
+* Run ruff and mypy in pre-commit by @koenvervloesem in https://github.com/theengs/gateway/pull/125
+* Add publish_advdata option by @koenvervloesem in https://github.com/theengs/gateway/pull/127
+* [RMAC] Filter random mac devices by @1technophile in https://github.com/theengs/gateway/pull/128
+* [TD] Update TheengsDecoder requirement version to 1.4.0 by @1technophile in https://github.com/theengs/gateway/pull/129
+* [RMAC] Remove unnecessary filters by @1technophile in https://github.com/theengs/gateway/pull/130
+
 ## [1.6.1]
 ## What's Changed
 * Filter APPLE_CONT devices by @1technophile in https://github.com/mihsu81/addon-theengsgw/pull/23

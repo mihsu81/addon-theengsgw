@@ -15,6 +15,7 @@ MQTT_SUB_TOPIC=$(bashio::config 'MQTT_SUB_TOPIC')
 MQTT_PRE_TOPIC=$(bashio::config 'MQTT_PRE_TOPIC')
 PRESENCE=$(bashio::config 'PRESENCE')
 PUBLISH_ALL=$(bashio::config 'PUBLISH_ALL')
+PUBLISH_ADVDATA=$(bashio::config 'PUBLISH_ADVDATA')
 SCAN_DUR=$(bashio::config 'SCAN_DUR')
 TIME_BETWEEN=$(bashio::config 'TIME_BETWEEN')
 LOG_LEVEL=$(bashio::config 'LOG_LEVEL')
@@ -25,6 +26,13 @@ DISCOVERY_FILTER=$(bashio::config 'DISCOVERY_FILTER')
 ADAPTER=$(bashio::config 'ADAPTER')
 TIME_SYNC=$(bashio::config 'TIME_SYNC')
 TIME_FORMAT=$(bashio::config 'TIME_FORMAT')
+
+# Convert the booleans to integers (1 for true, 0 for false) in single lines
+PRESENCE=$( [ "$PRESENCE" = "true" ] && echo 1 || echo 0 )
+PUBLISH_ALL=$( [ "$PUBLISH_ALL" = "true" ] && echo 1 || echo 0 )
+PUBLISH_ADVDATA=$( [ "$PUBLISH_ADVDATA" = "true" ] && echo 1 || echo 0 )
+DISCOVERY=$( [ "$DISCOVERY" = "true" ] && echo 1 || echo 0 )
+TIME_FORMAT=$( [ "$TIME_FORMAT" = "true" ] && echo 1 || echo 0 )
 
 {
     echo "{"
@@ -37,6 +45,7 @@ TIME_FORMAT=$(bashio::config 'TIME_FORMAT')
     echo "    \"presence_topic\": \"${MQTT_PRE_TOPIC}\","
     echo "    \"presence\": ${PRESENCE},"
     echo "    \"publish_all\": ${PUBLISH_ALL},"
+    echo "    \"publish_advdata\": ${PUBLISH_ADVDATA},"
     echo "    \"ble_scan_time\": ${SCAN_DUR},"
     echo "    \"ble_time_between_scans\": ${TIME_BETWEEN},"
     echo "    \"log_level\": \"${LOG_LEVEL}\","
