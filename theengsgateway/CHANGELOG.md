@@ -1,3 +1,20 @@
+## [1.8.0]
+## What's Changed
+* Docstring fixes by @koenvervloesem in https://github.com/theengs/gateway/pull/133
+* Add typing annotations by @koenvervloesem in https://github.com/theengs/gateway/pull/134
+* Clean up exceptions by @koenvervloesem in https://github.com/theengs/gateway/pull/135
+* [TD] Update TheengsDecoder requirement version to 1.4.2 by @DigiH in https://github.com/theengs/gateway/pull/136
+* [DOCS] Add web parser by @1technophile in https://github.com/theengs/gateway/pull/137
+* Only log number of published messages at INFO level by @koenvervloesem in https://github.com/theengs/gateway/pull/138
+* Bump TheengsDecoder to 150 by @1technophile in https://github.com/theengs/gateway/pull/139
+* Mopeka acceleration x/y-axis added by @DigiH in Mopeka acceleration x/y-axis added decoder#340
+* SBBT-002C: document periodic beacon by @koenvervloesem in SBBT-002C: document periodic beacon decoder#345
+* Fix SBBT-002C decoder to detect new firmware by @koenvervloesem in Fix SBBT-002C decoder to detect new firmware decoder#346
+* KKM K6P & K9 Beacons by @DigiH in KKM K6P & K9 Beacons decoder#347
+* Govee H5106 humidity decimal by @DigiH in Govee H5106 humidity decimal decoder#348
+* BlueCharm temperature fix by @DigiH in BlueCharm temperature fix decoder#349
+* Decoder for ShellyBLU Button1 by @koenvervloesem in Decoder for ShellyBLU Button1 decoder#337
+
 ## [1.7.0]
 ## What's Changed
 * Fix diagnose and run diagnostics when log level is DEBUG by @koenvervloesem in https://github.com/theengs/gateway/pull/122
