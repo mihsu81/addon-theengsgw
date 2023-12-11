@@ -1,6 +1,6 @@
 {
   "name": "TheengsGateway",
-  "version": "1.8.0",
+  "version": "1.9.0",
   "slug": "theengsgw",
   "description": "TheengsGateway HA Add-on",
   "url": "https://github.com/mihsu81/addon-theengsgw",
@@ -28,13 +28,17 @@
     "TIME_BETWEEN": 60,
     "LOG_LEVEL": "WARNING",
     "DISCOVERY": true,
-    "DISCOVERY_TOPIC": "homeassistant/sensor",
+    "DISCOVERY_TOPIC": "homeassistant",
     "DISCOVERY_DEVICE_NAME": "TheengsGateway",
     "DISCOVERY_FILTER": "[IBEACON]",
     "ADAPTER": "",
     "SCANNING_MODE": "active",
     "TIME_SYNC": "[]",
-    "TIME_FORMAT": false
+    "TIME_FORMAT": false,
+    "ENABLE_TLS": false,
+    "ENABLE_WEBSOCKET": false,
+    "IDENTITIES": "",
+    "BINDKEYS": ""
   },
   "schema": {
     "MQTT_HOST": "str",
@@ -57,6 +61,10 @@
     "ADAPTER": "str?",
     "SCANNING_MODE": "str?",
     "TIME_SYNC": "str?",
-    "TIME_FORMAT": "bool?"
+    "TIME_FORMAT": "bool?",
+    "ENABLE_TLS": "bool?",
+    "ENABLE_WEBSOCKET": "bool?",
+    "IDENTITIES": "str?",
+    "BINDKEYS": "str?"
   }
 }

@@ -26,6 +26,10 @@ DISCOVERY_FILTER=$(bashio::config 'DISCOVERY_FILTER')
 ADAPTER=$(bashio::config 'ADAPTER')
 TIME_SYNC=$(bashio::config 'TIME_SYNC')
 TIME_FORMAT=$(bashio::config 'TIME_FORMAT')
+IDENTITIES=$(bashio::config 'IDENTITIES')
+BINDKEYS=$(bashio::config 'BINDKEYS')
+ENABLE_TLS=$(bashio::config 'ENABLE_TLS')
+ENABLE_WEBSOCKET=$(bashio::config 'ENABLE_WEBSOCKET')
 
 # Convert the booleans to integers (1 for true, 0 for false) in single lines
 PRESENCE=$( [ "$PRESENCE" = "true" ] && echo 1 || echo 0 )
@@ -33,6 +37,11 @@ PUBLISH_ALL=$( [ "$PUBLISH_ALL" = "true" ] && echo 1 || echo 0 )
 PUBLISH_ADVDATA=$( [ "$PUBLISH_ADVDATA" = "true" ] && echo 1 || echo 0 )
 DISCOVERY=$( [ "$DISCOVERY" = "true" ] && echo 1 || echo 0 )
 TIME_FORMAT=$( [ "$TIME_FORMAT" = "true" ] && echo 1 || echo 0 )
+ENABLE_TLS=$( [ "$ENABLE_TLS" = "true" ] && echo 1 || echo 0 )
+ENABLE_WEBSOCKET=$( [ "$ENABLE_WEBSOCKET" = "true" ] && echo 1 || echo 0 )
+
+bashio::log.info "IDENTITIES: ${IDENTITIES}"
+bashio::log.info "BINDKEYS: ${BINDKEYS}"
 
 {
     echo "{"
@@ -54,8 +63,18 @@ TIME_FORMAT=$( [ "$TIME_FORMAT" = "true" ] && echo 1 || echo 0 )
     echo "    \"discovery_device_name\": \"${DISCOVERY_DEVICE_NAME}\","
     echo "    \"discovery_filter\": \"${DISCOVERY_FILTER}\","
     echo "    \"adapter\": \"${ADAPTER}\"",
-    echo "    \"time_sync\": \"${TIME_SYNC}\"",
-    echo "    \"time_format\": \"${TIME_FORMAT}\""
+    echo "    \"time_sync\": ${TIME_SYNC}",
+    echo "    \"time_format\": \"${TIME_FORMAT}\"",
+    echo "    \"enable_tls\": ${ENABLE_TLS}",
+    echo "    \"enable_websocket\": ${ENABLE_WEBSOCKET}"
+    # Check if IDENTITIES is not empty, then include it
+    if [ -n "${IDENTITIES}" ]; then
+        echo ",    \"identities\": ${IDENTITIES}"
+    fi
+    # Check if BINDKEYS is not empty, then include it
+    if [ -n "${BINDKEYS}" ]; then
+        echo ",    \"bindkeys\": ${BINDKEYS}"
+    fi
     echo "}"
 } > "${CONFIG}"
 

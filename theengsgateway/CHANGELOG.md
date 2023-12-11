@@ -1,3 +1,69 @@
+## [1.9.0]
+### What's Changed
+On top of numerous new devices supported, this version brings exciting features like the support of encrypted advertisements, the capability to resolve private BLE addresses, HA MQTT discovery tuning, and TLS/Websockets support. Let's dive in!
+
+### New devices
+|Devices|Model|Measurements|
+|-|:-:|:-:|
+| April Brother|N07|temperature/humidity/battery/packet ID|
+| BM6 Battery Monitor|BM6|battery|
+| GOVEE|H5100|temperature/humidity/battery|
+| GOVEE|H5104|temperature/humidity/battery|
+| GOVEE|H5179|temperature/humidity/battery|
+| INKBIRD|IBS-TH12S|temperature/humidity/battery|
+| NUT | NUTALE | tracker |
+| Oral B| Toothbrush| state, mode, sector, pressure, time|
+| Lippert|BottleCheck|temperature/level/sync status/voltage/battery/reading quality/acceleration x/y-axis|
+| ShellyBlu|Button1|button press type/battery/packet ID|
+| ShellyBlu|Door/Window|contact/rotation/battery/packet ID|
+| ShellyBlu|Motion|motion, illuminance, battery, packet ID|
+| ThermoPro|TP357s|temperature/humidity|
+
+### New features
+* Add support for ShellyBLU Button1 encrypted advertisements by @koenvervloesem in https://github.com/theengs/gateway/pull/145
+* Add -c option to choose path for configuration file by @koenvervloesem in https://github.com/theengs/gateway/pull/143
+* Add support for encrypted PVVX advertisements by @koenvervloesem in https://github.com/theengs/gateway/pull/146
+* Publish encrypted properties when PUBLISH_ADVDATA is 1 by @koenvervloesem in https://github.com/theengs/gateway/pull/150
+* Add support for decrypting ShellyBLU Door/Window advertisements by @koenvervloesem in https://github.com/theengs/gateway/pull/153
+* Decode advertisement with service data for each UUID separately by @koenvervloesem in https://github.com/theengs/gateway/pull/154
+* Simplify decoding of advertisements by @koenvervloesem in https://github.com/theengs/gateway/pull/157
+* Simplify configuration and arguments merging by @koenvervloesem in https://github.com/theengs/gateway/pull/158
+* feat/websockets-ssl by @radim-kliment in https://github.com/theengs/gateway/pull/160
+* Document TLS and WebSocket options by @koenvervloesem in https://github.com/theengs/gateway/pull/161
+* Support encrypted ShellyBLU Motion advertisements by @koenvervloesem in https://github.com/theengs/gateway/pull/172
+* Resolve private addresses for known IRKs by @koenvervloesem in https://github.com/theengs/gateway/pull/173
+* Update encryption code to Decoder 1.6.2 by @koenvervloesem in https://github.com/theengs/gateway/pull/176
+* [DISC] HA discovery device classes and units additions by @DigiH in https://github.com/theengs/gateway/pull/177
+
+### Miscelleanous
+* Stop scan loop and show error message on BleakError by @koenvervloesem in https://github.com/theengs/gateway/pull/179
+* [DISC] Align discovery by @1technophile in https://github.com/theengs/gateway/pull/183
+* Clean up configuration code by @koenvervloesem in https://github.com/theengs/gateway/pull/162
+* Fix typo preventing startup by @kw217 in https://github.com/theengs/gateway/pull/169
+* Clean up code with newly activated Ruff rules by @koenvervloesem in https://github.com/theengs/gateway/pull/156
+* Bump Theengs Decoder to v1.6.4  by @1technophile in https://github.com/theengs/gateway/pull/184
+
+### Documentation
+- [DOCS] Add H1 title by @1technophile in https://github.com/theengs/gateway/pull/164
+- [DOCS] Add compatible list by @1technophile in https://github.com/theengs/gateway/pull/140
+- [DOCS] Clarify support of non-Linux platforms by @koenvervloesem in https://github.com/theengs/gateway/pull/155
+- [DOCS] Remove new icon by @1technophile in https://github.com/theengs/gateway/pull/141
+- [DOCS] Fix typo in docs by @jcherniak in https://github.com/theengs/gateway/pull/147
+
+### CI
+* [CI] Enable all Ruff rules by @koenvervloesem in https://github.com/theengs/gateway/pull/163
+* [CI] Update GitHub actions by @koenvervloesem in https://github.com/theengs/gateway/pull/151
+* Update pre-commit configuration and fix newly found issues by @koenvervloesem in https://github.com/theengs/gateway/pull/165
+* [CI] Run pre-commit checks on all supported Python versions by @koenvervloesem in https://github.com/theengs/gateway/pull/170
+* Automatic versioning from Git metadata by @koenvervloesem in https://github.com/theengs/gateway/pull/149
+
+### New Contributors
+* @jcherniak made their first contribution in https://github.com/theengs/gateway/pull/147
+* @radim-kliment made their first contribution in https://github.com/theengs/gateway/pull/160
+* @kw217 made their first contribution in https://github.com/theengs/gateway/pull/169
+
+**Full Changelog**: https://github.com/theengs/gateway/compare/v1.1.0...v1.2.0
+
 ## [1.8.0]
 ## What's Changed
 * Docstring fixes by @koenvervloesem in https://github.com/theengs/gateway/pull/133
