@@ -25,12 +25,16 @@
 | TIME_BETWEEN          | int     | No       | Seconds to wait between scans, defaults to `60`                                 |
 | LOG_LEVEL             | string  | No       | TheengsGateway log level, defaults to `WARNING`                                 |
 | DISCOVERY             | boolean | No       | Activate discovery or not `true`                                                |
-| DISCOVERY_TOPIC       | string  | No       | Home Assistant discovery topic`homeassistant/sensor`                            |
+| DISCOVERY_TOPIC       | string  | No       | Home Assistant discovery topic`homeassistant`                            |
 | DISCOVERY_DEVICE_NAME | string  | No       | Device name `TheengsGateway`                                                    |
 | DISCOVERY_FILTER      | string  | No       | Excluded BLE devices models `[IBEACON,GAEN,MS-CDP,APPLE_CONT]`                  |
 | ADAPTER               | string  | No       | Bluetooth adapter (e.g. hci1 on Linux)                                          |
 | SCANNING_MODE         | string  | No       | Change scanning mode between `active` and `passive`, defaults to `active`       |
 | TIME_SYNC             | string  | No       | Addresses of BLE devices to synchronize time (defaults to the empty list `[]`)  |
 | TIME_FORMAT           | boolean | No       | Use 12-hour (`yes`) or 24-hour (`no`) time format for clocks (defaults to `no`) |
+| IDENTITIES            | json    | No       | IRK to resolve private addresses, example { "00:11:22:33:44:55:66":"0dc540f3025b474b9ef1085e051b1add","AA:BB:CC:DD:EE:FF":"6385424e1b0341109942ad2a6bb42e58"}              |
+| BINDKEYS              | json    | No       | Addresses and key to decrypt data, example { "00:11:22:33:44:55:66":"0dc540f3025b474b9ef1085e051b1add","AA:BB:CC:DD:EE:FF":"6385424e1b0341109942ad2a6bb42e58"}              |
+| ENABLE_TLS            | boolean | No       | Activate TLS                                                                    |
+| ENABLE_WEBSOCKET      | boolean | No       | Activate WebSocket                                                              |
 
 For more details please refer to [TheengsGateway](https://theengs.github.io/gateway/).
