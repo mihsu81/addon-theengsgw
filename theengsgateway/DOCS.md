@@ -23,9 +23,10 @@
 | PUBLISH_ADVDATA       | boolean | No       | Publish advertisements data if true, defaults to `no`                           |
 | SCAN_DUR              | int     | No       | BLE scan duration (seconds), defaults to `60`                                   |
 | TIME_BETWEEN          | int     | No       | Seconds to wait between scans, defaults to `60`                                 |
+| TRACKER_TIMEOUT       | int     | No       | Seconds before a tracker is declared as offline `120`                           |
 | LOG_LEVEL             | string  | No       | TheengsGateway log level, defaults to `WARNING`                                 |
 | DISCOVERY             | boolean | No       | Activate discovery or not `true`                                                |
-| DISCOVERY_TOPIC       | string  | No       | Home Assistant discovery topic`homeassistant`                            |
+| DISCOVERY_TOPIC       | string  | No       | Home Assistant discovery topic`homeassistant`                                   |
 | DISCOVERY_DEVICE_NAME | string  | No       | Device name `TheengsGateway`                                                    |
 | DISCOVERY_FILTER      | string  | No       | Excluded BLE devices models `[IBEACON,GAEN,MS-CDP,APPLE_CONT]`                  |
 | ADAPTER               | string  | No       | Bluetooth adapter (e.g. hci1 on Linux)                                          |
@@ -36,5 +37,6 @@
 | BINDKEYS              | json    | No       | Addresses and key to decrypt data, example { "00:11:22:33:44:55:66":"0dc540f3025b474b9ef1085e051b1add","AA:BB:CC:DD:EE:FF":"6385424e1b0341109942ad2a6bb42e58"}              |
 | ENABLE_TLS            | boolean | No       | Activate TLS                                                                    |
 | ENABLE_WEBSOCKET      | boolean | No       | Activate WebSocket                                                              |
+| BLE                   | boolean | No       | Enable Bluetooth usage                                                          |
 
 For more details please refer to [TheengsGateway](https://theengs.github.io/gateway/).
