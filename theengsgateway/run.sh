@@ -18,6 +18,7 @@ PUBLISH_ALL=$(bashio::config 'PUBLISH_ALL')
 PUBLISH_ADVDATA=$(bashio::config 'PUBLISH_ADVDATA')
 SCAN_DUR=$(bashio::config 'SCAN_DUR')
 TIME_BETWEEN=$(bashio::config 'TIME_BETWEEN')
+TRACKER_TIMEOUT=$(bashio::config 'TRACKER_TIMEOUT')
 LOG_LEVEL=$(bashio::config 'LOG_LEVEL')
 DISCOVERY=$(bashio::config 'DISCOVERY')
 DISCOVERY_TOPIC=$(bashio::config 'DISCOVERY_TOPIC')
@@ -30,8 +31,10 @@ IDENTITIES=$(bashio::config 'IDENTITIES')
 BINDKEYS=$(bashio::config 'BINDKEYS')
 ENABLE_TLS=$(bashio::config 'ENABLE_TLS')
 ENABLE_WEBSOCKET=$(bashio::config 'ENABLE_WEBSOCKET')
+BLE=$(bashio::config 'BLE')
 
 # Convert the booleans to integers (1 for true, 0 for false) in single lines
+BLE=$( [ "$BLE" = "true" ] && echo 1 || echo 0 )
 PRESENCE=$( [ "$PRESENCE" = "true" ] && echo 1 || echo 0 )
 PUBLISH_ALL=$( [ "$PUBLISH_ALL" = "true" ] && echo 1 || echo 0 )
 PUBLISH_ADVDATA=$( [ "$PUBLISH_ADVDATA" = "true" ] && echo 1 || echo 0 )
@@ -57,6 +60,7 @@ bashio::log.info "BINDKEYS: ${BINDKEYS}"
     echo "    \"publish_advdata\": ${PUBLISH_ADVDATA},"
     echo "    \"ble_scan_time\": ${SCAN_DUR},"
     echo "    \"ble_time_between_scans\": ${TIME_BETWEEN},"
+    echo "    \"tracker_timeout\": ${TRACKER_TIMEOUT},"
     echo "    \"log_level\": \"${LOG_LEVEL}\","
     echo "    \"discovery\": \"${DISCOVERY}\","
     echo "    \"discovery_topic\": \"${DISCOVERY_TOPIC}\","
@@ -66,7 +70,8 @@ bashio::log.info "BINDKEYS: ${BINDKEYS}"
     echo "    \"time_sync\": ${TIME_SYNC}",
     echo "    \"time_format\": \"${TIME_FORMAT}\"",
     echo "    \"enable_tls\": ${ENABLE_TLS}",
-    echo "    \"enable_websocket\": ${ENABLE_WEBSOCKET}"
+    echo "    \"enable_websocket\": ${ENABLE_WEBSOCKET}",
+    echo "    \"ble\": ${BLE}"
     # Check if IDENTITIES is not empty, then include it
     if [ -n "${IDENTITIES}" ]; then
         echo ",    \"identities\": ${IDENTITIES}"
