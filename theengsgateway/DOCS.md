@@ -18,6 +18,7 @@
 | MQTT_PUB_TOPIC        | string  | No       | MQTT publish topic, defaults to `home/TheengsGateway/BTtoMQTT`                  |
 | MQTT_SUB_TOPIC        | string  | No       | MQTT subscribe topic, defaults to `home/+/BTtoMQTT/undecoded`                   |
 | PRESENCE              | boolean | No       | Publish room presence detection, defaults to `no`                               |
+| GENERAL_PRESENCE      | boolean | No       | Publish general presence detection, defaults to `yes`                           |
 | MQTT_PRE_TOPIC        | string  | No       | MQTT presence topic, defaults to `home/presence/TheengsGateway`                 |
 | PUBLISH_ALL           | boolean | No       | Publish all beacons if true, defaults to `yes`                                  |
 | PUBLISH_ADVDATA       | boolean | No       | Publish advertisements data if true, defaults to `no`                           |

@@ -1,3 +1,15 @@
+## [1.11.0]
+### What's Changed
+* Don't spam log with full stack trace when bindkey not found by @koenvervloesem in https://github.com/theengs/gateway/pull/228
+* [DOCS] Add installation instructions in Python venv by @koenvervloesem in https://github.com/theengs/gateway/pull/229
+* [DOCS] Add Identities IRK example for docker by @1technophile in https://github.com/theengs/gateway/pull/230
+* [DOCS] Add instructions for systemd service by @koenvervloesem in https://github.com/theengs/gateway/pull/231
+* Tracker only discovery fix by @DigiH in https://github.com/theengs/gateway/pull/232
+* General Presence implementation by @DigiH in https://github.com/theengs/gateway/pull/233
+* Migrate to Paho MQTT 2.0 by @koenvervloesem in https://github.com/theengs/gateway/pull/234
+
+**Full Changelog**: https://github.com/theengs/gateway/compare/v1.3.0...v1.4.0
+
 ## [1.10.0]
 ### What's Changed
 This release is focused on **presence detection**. We can now detect the presence and absence of trackers devices like TILE, NUT, BlueCharm (and other models identified [here](https://decoder.theengs.io/devices/devices.html), the gateway will publish an offline message after tracker_timeout (120s per default) to set your controller to "Away" status.
