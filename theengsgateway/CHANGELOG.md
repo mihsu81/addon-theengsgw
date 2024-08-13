@@ -1,5 +1,9 @@
+## [1.11.2]
+### What's Changed
+Add missing option TLS_INSECURE
+
 ## [1.11.1]
-###BREAKING CHANGE:
+### BREAKING CHANGE:
 --time_between as float & argument adjustments by @DigiH in [#236](https://github.com/theengs/gateway/pull/236)
 See the documentation at https://gateway.theengs.io/use/use.html#details-options
 
@@ -16,7 +20,7 @@ Whitelist and Blacklist implementation by @johannes-z in [#257](https://github.c
 White/blacklist fix by @DigiH in [#258](https://github.com/theengs/gateway/pull/258)
 Bump TheengsDecoder to 178 by @DigiH in [#259](https://github.com/theengs/gateway/pull/259)
 
-###New devices
+### New devices
 |Devices|Model|Measurements|
 |-|:-:|:-:|
 | Gigaset |G-Tag|device tracker|
