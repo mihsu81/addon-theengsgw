@@ -1,3 +1,38 @@
+## [1.11.1]
+###BREAKING CHANGE:
+--time_between as float & argument adjustments by @DigiH in [#236](https://github.com/theengs/gateway/pull/236)
+See the documentation at https://gateway.theengs.io/use/use.html#details-options
+
+### NEW FEATURE:
+Whitelist and Blacklist implementation by @johannes-z in [#257](https://github.com/theengs/gateway/pull/257)
+
+### What's Changed
+model_id included in tracker dict by @DigiH in [#237](https://github.com/theengs/gateway/pull/237)
+Add option -ti/--tls_insecure to not check certificate hostname by @mcesar-rlacruz in [#244](https://github.com/theengs/gateway/pull/244)
+Remove discovery filter remnants at startup by @DigiH in [#248](https://github.com/theengs/gateway/pull/248)
+fix mqtt reason_code is not an int by @Mips2648 in [#252](https://github.com/theengs/gateway/pull/252)
+[DISC] Additional discovery device classes by @DigiH in [#253](https://github.com/theengs/gateway/pull/253)
+Whitelist and Blacklist implementation by @johannes-z in [#257](https://github.com/theengs/gateway/pull/257)
+White/blacklist fix by @DigiH in [#258](https://github.com/theengs/gateway/pull/258)
+Bump TheengsDecoder to 178 by @DigiH in [#259](https://github.com/theengs/gateway/pull/259)
+
+###New devices
+|Devices|Model|Measurements|
+|-|:-:|:-:|
+| Gigaset |G-Tag|device tracker|
+| Mobvoi |TicWatch GTH (Pro)|device tracker|
+| Jaalee |F51C|temperature, humidity, battery|
+| XOSS |X2 heart rate sensor|heart rate, battery|
+| NodOn |NIU smart button|button press type, color, battery|
+| Govee |H5105|temperature, humidity, battery|
+| Feasycom |Bluetooth Beacons|beacon model, battery, plugged-in|
+| Otodata |RC1010|level, status, serial, model type|
+| Amphiro/Oras/Hansa |Faucet|serial number, battery|
+| Tilt |Brewing Hydro- Thermometer|color, temperature, specific gravity, txpower @ 1 m|
+| SwitchBot |Blind Tilt|open, direction, motion, calibrated, light level, battery|
+
+**Full Changelog**: https://github.com/theengs/gateway/compare/v1.4.0...v1.5.0
+
 ## [1.11.0]
 ### What's Changed
 * Don't spam log with full stack trace when bindkey not found by @koenvervloesem in https://github.com/theengs/gateway/pull/228
