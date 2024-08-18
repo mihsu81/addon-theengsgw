@@ -84,8 +84,6 @@ bashio::log.info "WHITELIST: ${WHITELIST}"
     echo "    \"adapter\": \"${ADAPTER}\"",
     echo "    \"time_sync\": ${TIME_SYNC}",
     echo "    \"time_format\": \"${TIME_FORMAT}\"",
-    echo "    \"blacklist\": \"${BLACKLIST}\"",
-    echo "    \"whitelist\": \"${WHITELIST}\"",
     echo "    \"tls_insecure\": ${TLS_INSECURE}",
     echo "    \"enable_tls\": ${ENABLE_TLS}",
     echo "    \"enable_websocket\": ${ENABLE_WEBSOCKET}"
@@ -96,6 +94,14 @@ bashio::log.info "WHITELIST: ${WHITELIST}"
     # Check if BINDKEYS is not empty, then include it
     if [ -n "${BINDKEYS}" ]; then
         echo ",    \"bindkeys\": ${BINDKEYS}"
+    fi
+    # Check if BLACKLIST is not empty, then include it
+    if [ -n "${BLACKLIST}" ]; then
+        echo ",    \"blacklist\": ${BLACKLIST}"
+    fi
+    # Check if WHITELIST is not empty, then include it
+    if [ -n "${WHITELIST}" ]; then
+        echo ",    \"whitelist\": ${WHITELIST}"
     fi
     echo "}"
 } > "${CONFIG}"
