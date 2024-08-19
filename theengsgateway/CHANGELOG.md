@@ -1,3 +1,11 @@
+## [1.11.4]
+### What's Changed
+Add autodiscovery of MQTT connection settings if the Mosquito Broker Add-on is running and configured. 
+
+## [1.11.3]
+### What's Changed
+Adjust how BLACKLIST & WHITELIST are inserted
+
 ## [1.11.2]
 ### What's Changed
 Add missing option TLS_INSECURE

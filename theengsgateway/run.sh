@@ -6,10 +6,22 @@ CONFIG="/root/theengsgw.conf"
 bashio::log.info "Creating TheengsGateway configuration..."
 
 # Create TheengsGateway config
-MQTT_HOST=$(bashio::config 'MQTT_HOST')
-MQTT_USERNAME=$(bashio::config 'MQTT_USERNAME')
-MQTT_PASSWORD=$(bashio::config 'MQTT_PASSWORD')
-MQTT_PORT=$(bashio::config 'MQTT_PORT')
+if bashio::services.available "mqtt"; then
+    MQTT_HOST=$(bashio::services "mqtt" "host")
+    MQTT_PASSWORD=$(bashio::services "mqtt" "password")
+    MQTT_PORT=$(bashio::services "mqtt" "port")
+    MQTT_USERNAME=$(bashio::services "mqtt" "username")
+else
+    bashio::log.info "The MQTT Add-on is not available."
+    bashio::log.info "This is not a problem if you are using an external MQTT broker."
+    bashio::log.info "If you are using the Home Assistant Mosquitto Broker Add-on, try restarting it, and then restart this addon."
+    bashio::log.info "For an external broker, make sure you fill in the mqtt connection settings, and restart the addon."
+    MQTT_HOST=$(bashio::config 'MQTT_HOST')
+    MQTT_USERNAME=$(bashio::config 'MQTT_USERNAME')
+    MQTT_PASSWORD=$(bashio::config 'MQTT_PASSWORD')
+    MQTT_PORT=$(bashio::config 'MQTT_PORT')
+fi
+
 MQTT_PUB_TOPIC=$(bashio::config 'MQTT_PUB_TOPIC')
 MQTT_SUB_TOPIC=$(bashio::config 'MQTT_SUB_TOPIC')
 MQTT_PRE_TOPIC=$(bashio::config 'MQTT_PRE_TOPIC')
