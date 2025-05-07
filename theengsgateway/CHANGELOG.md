@@ -1,3 +1,7 @@
+## [1.11.5]
+### What's Changed
+Removed GENERAL_PRESENCE to fix [#41](https://github.com/mihsu81/addon-theengsgw/issues/41) as requested by @DigiH.
+
 ## [1.11.4]
 ### What's Changed
 Add autodiscovery of MQTT connection settings if the Mosquito Broker Add-on is running and configured. 
