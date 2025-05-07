@@ -26,7 +26,6 @@ MQTT_PUB_TOPIC=$(bashio::config 'MQTT_PUB_TOPIC')
 MQTT_SUB_TOPIC=$(bashio::config 'MQTT_SUB_TOPIC')
 MQTT_PRE_TOPIC=$(bashio::config 'MQTT_PRE_TOPIC')
 PRESENCE=$(bashio::config 'PRESENCE')
-GENERAL_PRESENCE=$(bashio::config 'GENERAL_PRESENCE')
 PUBLISH_ALL=$(bashio::config 'PUBLISH_ALL')
 PUBLISH_ADVDATA=$(bashio::config 'PUBLISH_ADVDATA')
 BLE=$(bashio::config 'BLE')
@@ -54,7 +53,6 @@ ENABLE_WEBSOCKET=$(bashio::config 'ENABLE_WEBSOCKET')
 # Convert the booleans to integers (1 for true, 0 for false) in single lines
 BLE=$( [ "$BLE" = "true" ] && echo 1 || echo 0 )
 PRESENCE=$( [ "$PRESENCE" = "true" ] && echo 1 || echo 0 )
-GENERAL_PRESENCE=$( [ "$GENERAL_PRESENCE" = "true" ] && echo 1 || echo 0 )
 PUBLISH_ALL=$( [ "$PUBLISH_ALL" = "true" ] && echo 1 || echo 0 )
 PUBLISH_ADVDATA=$( [ "$PUBLISH_ADVDATA" = "true" ] && echo 1 || echo 0 )
 DISCOVERY=$( [ "$DISCOVERY" = "true" ] && echo 1 || echo 0 )
@@ -79,7 +77,6 @@ bashio::log.info "WHITELIST: ${WHITELIST}"
     echo "    \"subscribe_topic\": \"${MQTT_SUB_TOPIC}\","
     echo "    \"presence_topic\": \"${MQTT_PRE_TOPIC}\","
     echo "    \"presence\": ${PRESENCE},"
-    echo "    \"general_presence\": ${GENERAL_PRESENCE},"
     echo "    \"publish_all\": ${PUBLISH_ALL},"
     echo "    \"publish_advdata\": ${PUBLISH_ADVDATA},"
     echo "    \"ble\": ${BLE}",
