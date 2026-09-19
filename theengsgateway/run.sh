@@ -38,17 +38,26 @@ DISCOVERY=$(bashio::config 'DISCOVERY')
 DISCOVERY_TOPIC=$(bashio::config 'DISCOVERY_TOPIC')
 DISCOVERY_DEVICE_NAME=$(bashio::config 'DISCOVERY_DEVICE_NAME')
 DISCOVERY_FILTER=$(bashio::config 'DISCOVERY_FILTER')
-HASS_DISCOVERY=$(bashio::config 'HASS_DISCOVERY')
 ADAPTER=$(bashio::config 'ADAPTER')
+SCANNING_MODE=$(bashio::config 'SCANNING_MODE')
 TIME_SYNC=$(bashio::config 'TIME_SYNC')
 TIME_FORMAT=$(bashio::config 'TIME_FORMAT')
 IDENTITIES=$(bashio::config 'IDENTITIES')
 BINDKEYS=$(bashio::config 'BINDKEYS')
 BLACKLIST=$(bashio::config 'BLACKLIST')
 WHITELIST=$(bashio::config 'WHITELIST')
+IGNORE_WBLIST=$(bashio::config 'IGNORE_WBLIST')
 TLS_INSECURE=$(bashio::config 'TLS_INSECURE')
 ENABLE_TLS=$(bashio::config 'ENABLE_TLS')
+CA_CERTS=$(bashio::config 'CA_CERTS')
 ENABLE_WEBSOCKET=$(bashio::config 'ENABLE_WEBSOCKET')
+ENABLE_MULTI_GTW_SYNC=$(bashio::config 'ENABLE_MULTI_GTW_SYNC')
+TRACKERSYNC_TOPIC=$(bashio::config 'TRACKERSYNC_TOPIC')
+
+# Options added in 1.12.0 may be unset ("null") on an upgraded install: fall back to the upstream defaults
+if [ "${SCANNING_MODE}" = "null" ] || [ -z "${SCANNING_MODE}" ]; then SCANNING_MODE="active"; fi
+if [ "${CA_CERTS}" = "null" ]; then CA_CERTS=""; fi
+if [ "${TRACKERSYNC_TOPIC}" = "null" ] || [ -z "${TRACKERSYNC_TOPIC}" ]; then TRACKERSYNC_TOPIC="home/internal/trackersync"; fi
 
 # Convert the booleans to integers (1 for true, 0 for false) in single lines
 BLE=$( [ "$BLE" = "true" ] && echo 1 || echo 0 )
@@ -56,11 +65,20 @@ PRESENCE=$( [ "$PRESENCE" = "true" ] && echo 1 || echo 0 )
 PUBLISH_ALL=$( [ "$PUBLISH_ALL" = "true" ] && echo 1 || echo 0 )
 PUBLISH_ADVDATA=$( [ "$PUBLISH_ADVDATA" = "true" ] && echo 1 || echo 0 )
 DISCOVERY=$( [ "$DISCOVERY" = "true" ] && echo 1 || echo 0 )
-HASS_DISCOVERY=$( [ "$HASS_DISCOVERY" = "true" ] && echo 1 || echo 0 )
 TIME_FORMAT=$( [ "$TIME_FORMAT" = "true" ] && echo 1 || echo 0 )
-TLS_INSECURE=$( [ "$TLS_INSECURE" = "false" ] && echo 1 || echo 0 )
+TLS_INSECURE=$( [ "$TLS_INSECURE" = "true" ] && echo 1 || echo 0 )
 ENABLE_TLS=$( [ "$ENABLE_TLS" = "true" ] && echo 1 || echo 0 )
 ENABLE_WEBSOCKET=$( [ "$ENABLE_WEBSOCKET" = "true" ] && echo 1 || echo 0 )
+IGNORE_WBLIST=$( [ "$IGNORE_WBLIST" = "true" ] && echo 1 || echo 0 )
+ENABLE_MULTI_GTW_SYNC=$( [ "$ENABLE_MULTI_GTW_SYNC" = "false" ] && echo 0 || echo 1 )
+
+# The discovery filter is a bracketed, comma separated list; strip whitespace so every entry matches
+DISCOVERY_FILTER="${DISCOVERY_FILTER// /}"
+
+# Quote a shell string as a JSON string (handles quotes and backslashes in credentials)
+json_str() {
+    printf '%s' "$1" | jq -R -s '.'
+}
 
 bashio::log.info "IDENTITIES: ${IDENTITIES}"
 bashio::log.info "BINDKEYS: ${BINDKEYS}"
@@ -69,9 +87,9 @@ bashio::log.info "WHITELIST: ${WHITELIST}"
 
 {
     echo "{"
-    echo "    \"host\": \"${MQTT_HOST}\","
-    echo "    \"pass\": \"${MQTT_PASSWORD}\","
-    echo "    \"user\": \"${MQTT_USERNAME}\","
+    echo "    \"host\": $(json_str "${MQTT_HOST}"),"
+    echo "    \"pass\": $(json_str "${MQTT_PASSWORD}"),"
+    echo "    \"user\": $(json_str "${MQTT_USERNAME}"),"
     echo "    \"port\": ${MQTT_PORT},"
     echo "    \"publish_topic\": \"${MQTT_PUB_TOPIC}\","
     echo "    \"subscribe_topic\": \"${MQTT_SUB_TOPIC}\","
@@ -79,23 +97,30 @@ bashio::log.info "WHITELIST: ${WHITELIST}"
     echo "    \"presence\": ${PRESENCE},"
     echo "    \"publish_all\": ${PUBLISH_ALL},"
     echo "    \"publish_advdata\": ${PUBLISH_ADVDATA},"
-    echo "    \"ble\": ${BLE}",
+    echo "    \"ble\": ${BLE},"
     echo "    \"ble_scan_time\": ${SCAN_DUR},"
     echo "    \"ble_time_between_scans\": ${TIME_BETWEEN},"
     echo "    \"tracker_timeout\": ${TRACKER_TIMEOUT},"
     echo "    \"log_level\": \"${LOG_LEVEL}\","
     echo "    \"lwt_topic\": \"${LWT_TOPIC}\","
-    echo "    \"discovery\": \"${DISCOVERY}\","
-    echo "    \"hass_discovery\": \"${HASS_DISCOVERY}\","
+    echo "    \"discovery\": ${DISCOVERY},"
     echo "    \"discovery_topic\": \"${DISCOVERY_TOPIC}\","
     echo "    \"discovery_device_name\": \"${DISCOVERY_DEVICE_NAME}\","
     echo "    \"discovery_filter\": \"${DISCOVERY_FILTER}\","
-    echo "    \"adapter\": \"${ADAPTER}\"",
-    echo "    \"time_sync\": ${TIME_SYNC}",
-    echo "    \"time_format\": \"${TIME_FORMAT}\"",
-    echo "    \"tls_insecure\": ${TLS_INSECURE}",
-    echo "    \"enable_tls\": ${ENABLE_TLS}",
-    echo "    \"enable_websocket\": ${ENABLE_WEBSOCKET}"
+    echo "    \"adapter\": \"${ADAPTER}\","
+    echo "    \"scanning_mode\": \"${SCANNING_MODE}\","
+    echo "    \"time_sync\": ${TIME_SYNC},"
+    echo "    \"time_format\": ${TIME_FORMAT},"
+    echo "    \"tls_insecure\": ${TLS_INSECURE},"
+    echo "    \"enable_tls\": ${ENABLE_TLS},"
+    echo "    \"enable_websocket\": ${ENABLE_WEBSOCKET},"
+    echo "    \"ignore_wblist\": ${IGNORE_WBLIST},"
+    echo "    \"enable_multi_gtw_sync\": ${ENABLE_MULTI_GTW_SYNC},"
+    echo "    \"trackersync_topic\": \"${TRACKERSYNC_TOPIC}\""
+    # Only pass a CA file when one is configured, the gateway uses the system CAs otherwise
+    if [ -n "${CA_CERTS}" ]; then
+        echo ",    \"ca_certs\": \"${CA_CERTS}\""
+    fi
     # Check if IDENTITIES is not empty, then include it
     if [ -n "${IDENTITIES}" ]; then
         echo ",    \"identities\": ${IDENTITIES}"
@@ -114,6 +139,11 @@ bashio::log.info "WHITELIST: ${WHITELIST}"
     fi
     echo "}"
 } > "${CONFIG}"
+
+# Fail early with a clear message if the assembled configuration is not valid JSON
+if ! jq -e . "${CONFIG}" > /dev/null; then
+    bashio::exit.nok "The generated TheengsGateway configuration is not valid JSON, check the IDENTITIES/BINDKEYS/BLACKLIST/WHITELIST/TIME_SYNC options."
+fi
 
 # Start TheengsGateway
 bashio::log.info "Starting TheengsGateway..."
