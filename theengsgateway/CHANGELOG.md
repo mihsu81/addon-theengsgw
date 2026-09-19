@@ -1,6 +1,6 @@
 ## [1.12.0]
 ### BREAKING CHANGE:
-The add-on image is now built on Debian trixie (`ghcr.io/home-assistant/*-base-debian:trixie`, Python 3.13) instead of the end-of-life bullseye image, and Theengs Gateway is updated from 1.5.0 to [1.7.5](https://github.com/theengs/gateway/releases/tag/v1.7.5) with Theengs Decoder 2.x.
+The add-on image is now built on Debian trixie (`ghcr.io/home-assistant/*-base-debian:trixie`, Python 3.13) instead of the end-of-life bullseye image (the base image is selected in the Dockerfile from `BUILD_ARCH`, `build.json` is gone as the Supervisor deprecated it), and Theengs Gateway is updated from 1.5.0 to [1.7.5](https://github.com/theengs/gateway/releases/tag/v1.7.5) with Theengs Decoder 2.x.
 The `HASS_DISCOVERY` option was removed, it no longer exists in Theengs Gateway since 1.6.0 ([#284](https://github.com/theengs/gateway/pull/284)); use `DISCOVERY` instead.
 
 ### NEW FEATURE:

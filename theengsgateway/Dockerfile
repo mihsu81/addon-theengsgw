@@ -1,5 +1,6 @@
-ARG BUILD_FROM
-FROM $BUILD_FROM
+# The Supervisor passes BUILD_ARCH (armhf|armv7|aarch64|amd64|i386); build.json is deprecated since Supervisor 2026.09
+ARG BUILD_ARCH=amd64
+FROM ghcr.io/home-assistant/${BUILD_ARCH}-base-debian:trixie
 LABEL io.hass.version="1.12.0" io.hass.type="addon" io.hass.arch="armv7|armhf|aarch64|i386|amd64"
 RUN apt-get update && apt-get upgrade -y && \
     apt-get install --no-install-recommends -y build-essential bluez python3-pip python3-dev && \
