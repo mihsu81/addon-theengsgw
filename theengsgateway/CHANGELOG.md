@@ -1,3 +1,25 @@
+## [1.12.0]
+### BREAKING CHANGE:
+The add-on image is now built on Debian trixie (`ghcr.io/home-assistant/*-base-debian:trixie`, Python 3.13) instead of the end-of-life bullseye image, and Theengs Gateway is updated from 1.5.0 to [1.7.5](https://github.com/theengs/gateway/releases/tag/v1.7.5) with Theengs Decoder 2.x.
+The `HASS_DISCOVERY` option was removed, it no longer exists in Theengs Gateway since 1.6.0 ([#284](https://github.com/theengs/gateway/pull/284)); use `DISCOVERY` instead.
+
+### NEW FEATURE:
+* `CA_CERTS`: path to a custom Certificate Authority file for MQTT TLS validation ([#286](https://github.com/theengs/gateway/pull/286))
+* `IGNORE_WBLIST`: temporarily ignore a configured black- or whitelist ([#291](https://github.com/theengs/gateway/pull/291))
+* `ENABLE_MULTI_GTW_SYNC` and `TRACKERSYNC_TOPIC`: device tracker sync across Theengs Gateway and OpenMQTTGateway gateways, enabled by default ([#265](https://github.com/theengs/gateway/pull/265))
+
+### Fixed
+* `TLS_INSECURE` was inverted (setting it to `false` enabled insecure TLS)
+* `SCANNING_MODE` was accepted in the configuration but never passed to the gateway
+* `DISCOVERY` and `TIME_FORMAT` were written as strings, so disabling them had no effect
+* MQTT credentials containing quotes or backslashes broke the generated configuration
+* The generated configuration is validated before the gateway starts
+
+### Upstream changes
+See the Theengs Gateway release notes for [v1.6.0](https://github.com/theengs/gateway/releases/tag/v1.6.0), [v1.7.0](https://github.com/theengs/gateway/releases/tag/v1.7.0) and [v1.7.5](https://github.com/theengs/gateway/releases/tag/v1.7.5): Victron Energy decryption, MQTT client ID, string `DISCOVERY_FILTER` handling for the add-on, additional Home Assistant device classes, and the new devices supported by Theengs Decoder 2.x.
+
+**Full Changelog**: https://github.com/theengs/gateway/compare/v1.5.0...v1.7.5
+
 ## [1.11.5]
 ### What's Changed
 Removed GENERAL_PRESENCE to fix [#41](https://github.com/mihsu81/addon-theengsgw/issues/41) as requested by @DigiH.

@@ -21,7 +21,7 @@
 | MQTT_PRE_TOPIC        | string  | No       | MQTT presence topic, defaults to `home/presence/TheengsGateway`                 |
 | PUBLISH_ALL           | boolean | No       | Publish all beacons if true, defaults to `yes`                                  |
 | PUBLISH_ADVDATA       | boolean | No       | Publish advertisements data if true, defaults to `no`                           |
-| SCAN_DUR              | int     | No       | BLE scan duration (seconds), defaults to `60`                                   |
+| SCAN_DUR              | int     | No       | BLE scan duration (seconds), defaults to `10`                                   |
 | TIME_BETWEEN          | int     | No       | Seconds to wait between scans, defaults to `60`                                 |
 | TRACKER_TIMEOUT       | int     | No       | Seconds before a tracker is declared as offline `120`                           |
 | BLE                   | boolean | No       | Enable Bluetooth usage                                                          |
@@ -30,8 +30,7 @@
 | DISCOVERY             | boolean | No       | Activate discovery or not `true`                                                |
 | DISCOVERY_TOPIC       | string  | No       | Home Assistant discovery topic`homeassistant`                                   |
 | DISCOVERY_DEVICE_NAME | string  | No       | Device name `TheengsGateway`                                                    |
-| DISCOVERY_FILTER      | string  | No       | Excluded BLE devices models `[IBEACON,GAEN,MS-CDP,APPLE_CONT]`                  |
-| HASS_DISCOVERY        | boolean | No       | Enable(1) or disable(0) Home Assistant MQTT discovery, defaults to yes          |
+| DISCOVERY_FILTER      | string  | No       | BLE device models excluded from discovery, defaults to `[IBEACON]`               |
 | ADAPTER               | string  | No       | Bluetooth adapter (e.g. hci1 on Linux)                                          |
 | SCANNING_MODE         | string  | No       | Change scanning mode between `active` and `passive`, defaults to `active`       |
 | TIME_SYNC             | string  | No       | Addresses of BLE devices to synchronize time (defaults to the empty list `[]`)  |
@@ -40,8 +39,12 @@
 | BINDKEYS              | json    | No       | Addresses and key to decrypt data, example `{"00:11:22:33:44:55:66":"0dc540f3025b474b9ef1085e051b1add", "AA:BB:CC:DD:EE:FF":"6385424e1b0341109942ad2a6bb42e58"}`             |
 | BLACKLIST             | json    | No       | Addresses of Bluetooth devices to ignore, all other devices are allowed, example `["00:11:22:33:44:55:66", "AA:BB:CC:DD:EE:FF"]`              |
 | WHITELIST             | json    | No       | Addresses of Bluetooth devices to allow, all other devices are ignored, example `["00:11:22:33:44:55:66", "AA:BB:CC:DD:EE:FF"]`               |
+| IGNORE_WBLIST         | boolean | No       | Temporarily ignore a configured BLACKLIST/WHITELIST without deleting it, defaults to `no`  |
+| ENABLE_MULTI_GTW_SYNC | boolean | No       | Sync device trackers and closest-control devices with other Theengs Gateway and OpenMQTTGateway gateways, defaults to `yes` |
+| TRACKERSYNC_TOPIC     | string  | No       | Internal MQTT topic used for the multi-gateway sync, defaults to `home/internal/trackersync` |
 | TLS_INSECURE          | boolean | No       | Allow or disallow insecure TLS (no hostname check), defaults to 'no' (0)        |
 | ENABLE_TLS            | boolean | No       | Activate TLS                                                                    |
+| CA_CERTS              | string  | No       | Path to a file with custom Certificate Authorities for TLS validation, e.g. `/ssl/ca.crt` (the add-on's `/ssl` folder is mounted read-only). Leave empty to use the system CAs |
 | ENABLE_WEBSOCKET      | boolean | No       | Activate WebSocket                                                              |
 
 For more details please refer to [TheengsGateway](https://theengs.github.io/gateway/).
