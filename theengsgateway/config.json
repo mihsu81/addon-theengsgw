@@ -1,6 +1,6 @@
 {
   "name": "TheengsGateway",
-  "version": "1.12.0",
+  "version": "1.13.0",
   "slug": "theengsgw",
   "description": "TheengsGateway HA Add-on",
   "url": "https://github.com/mihsu81/addon-theengsgw",
@@ -35,6 +35,7 @@
     "DISCOVERY_TOPIC": "homeassistant",
     "DISCOVERY_DEVICE_NAME": "TheengsGateway",
     "DISCOVERY_FILTER": "[IBEACON]",
+    "DISCOVERY_DIAGNOSTIC": false,
     "ADAPTER": "",
     "SCANNING_MODE": "active",
     "TIME_SYNC": "[]",
@@ -72,6 +73,7 @@
     "DISCOVERY_TOPIC": "str?",
     "DISCOVERY_DEVICE_NAME": "str?",
     "DISCOVERY_FILTER": "str?",
+    "DISCOVERY_DIAGNOSTIC": "bool?",
     "ADAPTER": "str?",
     "SCANNING_MODE": "list(active|passive)?",
     "TIME_SYNC": "str?",

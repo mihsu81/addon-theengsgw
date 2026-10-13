@@ -38,6 +38,7 @@ DISCOVERY=$(bashio::config 'DISCOVERY')
 DISCOVERY_TOPIC=$(bashio::config 'DISCOVERY_TOPIC')
 DISCOVERY_DEVICE_NAME=$(bashio::config 'DISCOVERY_DEVICE_NAME')
 DISCOVERY_FILTER=$(bashio::config 'DISCOVERY_FILTER')
+DISCOVERY_DIAGNOSTIC=$(bashio::config 'DISCOVERY_DIAGNOSTIC')
 ADAPTER=$(bashio::config 'ADAPTER')
 SCANNING_MODE=$(bashio::config 'SCANNING_MODE')
 TIME_SYNC=$(bashio::config 'TIME_SYNC')
@@ -65,6 +66,7 @@ PRESENCE=$( [ "$PRESENCE" = "true" ] && echo 1 || echo 0 )
 PUBLISH_ALL=$( [ "$PUBLISH_ALL" = "true" ] && echo 1 || echo 0 )
 PUBLISH_ADVDATA=$( [ "$PUBLISH_ADVDATA" = "true" ] && echo 1 || echo 0 )
 DISCOVERY=$( [ "$DISCOVERY" = "true" ] && echo 1 || echo 0 )
+DISCOVERY_DIAGNOSTIC=$( [ "$DISCOVERY_DIAGNOSTIC" = "true" ] && echo 1 || echo 0 )
 TIME_FORMAT=$( [ "$TIME_FORMAT" = "true" ] && echo 1 || echo 0 )
 TLS_INSECURE=$( [ "$TLS_INSECURE" = "true" ] && echo 1 || echo 0 )
 ENABLE_TLS=$( [ "$ENABLE_TLS" = "true" ] && echo 1 || echo 0 )
@@ -107,6 +109,7 @@ bashio::log.info "WHITELIST: ${WHITELIST}"
     echo "    \"discovery_topic\": \"${DISCOVERY_TOPIC}\","
     echo "    \"discovery_device_name\": \"${DISCOVERY_DEVICE_NAME}\","
     echo "    \"discovery_filter\": \"${DISCOVERY_FILTER}\","
+    echo "    \"discovery_diagnostic\": ${DISCOVERY_DIAGNOSTIC},"
     echo "    \"adapter\": \"${ADAPTER}\","
     echo "    \"scanning_mode\": \"${SCANNING_MODE}\","
     echo "    \"time_sync\": ${TIME_SYNC},"
