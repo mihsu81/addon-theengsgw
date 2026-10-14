@@ -1,3 +1,15 @@
+## [1.13.0]
+### NEW FEATURE:
+* `DISCOVERY_DIAGNOSTIC`: publish RSSI, TX power, packet counters and (unless the device is a battery monitor) battery properties as diagnostic entities in Home Assistant, disabled by default ([#325](https://github.com/theengs/gateway/pull/325))
+
+### Upstream changes
+Theengs Gateway is updated from 1.7.5 to [1.8.0](https://github.com/theengs/gateway/releases/tag/v1.8.0) with Theengs Decoder 2.5.0:
+* RSSI sensor added to Home Assistant discovery ([#323](https://github.com/theengs/gateway/pull/323))
+* BLE event loop creation fixed on Python 3.14 and above ([#319](https://github.com/theengs/gateway/pull/319))
+* Duplicate work removed in device info publishing ([#324](https://github.com/theengs/gateway/pull/324))
+
+**Full Changelog**: https://github.com/theengs/gateway/compare/v1.7.5...v1.8.0
+
 ## [1.12.0]
 ### BREAKING CHANGE:
 The add-on image is now built on Debian trixie (`ghcr.io/home-assistant/*-base-debian:trixie`, Python 3.13) instead of the end-of-life bullseye image (the base image is selected in the Dockerfile from `BUILD_ARCH`, `build.json` is gone as the Supervisor deprecated it), and Theengs Gateway is updated from 1.5.0 to [1.7.5](https://github.com/theengs/gateway/releases/tag/v1.7.5) with Theengs Decoder 2.x.
